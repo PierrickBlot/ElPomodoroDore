@@ -1,5 +1,4 @@
-﻿using ElPomodoro.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,22 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ElPomodoro
+namespace ElPomodoro.Pages
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour RemplissageFragments.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RemplissageFragments : Page
     {
-        public MainWindow()
+        int compteur = 0;
+        public RemplissageFragments()
         {
             InitializeComponent();
-        }
-
-        private void NouveauPomodoro(object sender, RoutedEventArgs e)
-        {
-            AjoutPomodoro ap = new AjoutPomodoro();
-            this.Content = ap;
+            Titre.Content = "Fragment" + compteur.ToString();
         }
     }
 }
