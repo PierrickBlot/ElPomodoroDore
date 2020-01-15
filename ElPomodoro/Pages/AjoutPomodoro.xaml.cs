@@ -74,11 +74,14 @@ namespace ElPomodoro.Pages
             Jour j = new Jour();
             j.date = laDate.SelectedDate;
             j.intitule = unIntitule.Text;
-
+            j.nbPomodoro = Int32.Parse(nbFragments.Text);
             j.Insert();
 
+            con.Close();
+
             RemplissageFragments rf = new RemplissageFragments();
-            this.Content = rf;
+            this.NavigationService.Navigate(rf);
+            //this.Content = new Frame() { Content = rf };
         }
     }
 }

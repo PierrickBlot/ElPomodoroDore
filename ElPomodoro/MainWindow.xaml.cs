@@ -30,7 +30,8 @@ namespace ElPomodoro
         private void NouveauPomodoro(object sender, RoutedEventArgs e)
         {
             AjoutPomodoro ap = new AjoutPomodoro();
-            this.Content = ap;
+            laFrame.NavigationService.Navigate(ap);
+            //this.Content = ap;
         }
     }
 }

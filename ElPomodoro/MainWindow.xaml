@@ -11,6 +11,8 @@
         <Grid Background="#F7E065">
             <Label Content="El Pomodoro Dore" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Algerian" Foreground="#C56721"/>
             <Button Content="Nouveau Pomorodo" HorizontalAlignment="Left" Margin="241,378,0,0" VerticalAlignment="Top" Width="114" Click="NouveauPomodoro" />
-        </Grid>
+            <Frame x:Name="laFrame">
+            </Frame>
+            </Grid>
     </Page>
 </Window>

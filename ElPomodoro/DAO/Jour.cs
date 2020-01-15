@@ -12,6 +12,7 @@ namespace ElPomodoro.DAO
         public int id;
         public DateTime? date;
         public string intitule;
+        public int nbPomodoro;
 
 
         public Jour() {}
