@@ -26,7 +26,7 @@ namespace ElPomodoro
 
         public SQLiteConnection ConnectionBDD()
         {
-            SQLiteConnection con = new SQLiteConnection(@"Datasource=C:\Users\remig\Desktop\Cours\.Net\ElPomodoroDore\ElPomodoreDore.db");
+            SQLiteConnection con = new SQLiteConnection(@"Datasource=D:\Cours\B3\.Net\ElPomodoreDore.db");
             return con;
         }
 
