@@ -27,6 +27,14 @@ namespace ElPomodoro.Pages
             nbFragments.Text = "0";
         }
 
+        private void TextBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (intitule.Text == "Intitulé")
+            {
+                intitule.Text = "";
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int value = int.Parse(nbFragments.Text);

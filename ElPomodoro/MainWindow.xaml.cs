@@ -21,9 +21,10 @@ namespace ElPomodoro
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() 
         {
             InitializeComponent();
+            InitBDD bdd = new InitBDD();
         }
 
         private void NouveauPomodoro(object sender, RoutedEventArgs e)
