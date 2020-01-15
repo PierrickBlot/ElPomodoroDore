@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ElPomodoro.DAO;
+using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -29,9 +31,9 @@ namespace ElPomodoro.Pages
 
         private void TextBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (intitule.Text == "Intitulé")
+            if (unIntitule.Text == "Intitulé")
             {
-                intitule.Text = "";
+                unIntitule.Text = "";
             }
         }
 
@@ -66,6 +68,15 @@ namespace ElPomodoro.Pages
 
         private void Validation(object sender, RoutedEventArgs e)
         {
+            InitBDD bdd = new InitBDD();
+            var con = bdd.ConnectionBDD();
+
+            Jour j = new Jour();
+            j.date = laDate.SelectedDate;
+            j.intitule = unIntitule.Text;
+
+            j.Insert();
+
             RemplissageFragments rf = new RemplissageFragments();
             this.Content = rf;
         }
