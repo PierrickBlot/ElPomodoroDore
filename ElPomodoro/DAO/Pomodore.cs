@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace ElPomodoro.DAO
 {
-    public class Jour
+    public class Pomodore
     {
-        public int Id { get; set; }
-        public string Date { get; set; }
-        public string Intitule { get; set; }
-        public int Fragment { get; set; }
+        public int Numero { get; set; }
 
-        public Jour() {}
+        public int Id { get; set; }
+        public string MotClef { get; set; }
+        public string Heure { get; set; }
+        public int IdJour { get; set; }
+
+        public Pomodore() { }
 
         public void Insert()
         {
@@ -22,9 +24,9 @@ namespace ElPomodoro.DAO
             var con = bdd.ConnectionBDD();
             con.Open();
             var cmd = new SQLiteCommand(con);
-            this.Intitule = "'" + this.Intitule + "'";
-
-            cmd.CommandText = "INSERT INTO jour(dateJour, intitule, fragment) VALUES(\'" + this.Date+ "\',"+this.Intitule+","+Fragment+");";
+            //this.MotClef = "'" + this.MotClef + "'";
+            //var test = "\'" + this.MotClef + "\'";
+            cmd.CommandText = "INSERT INTO pomodoro(motClef, heure, idJour) VALUES(\'" + this.MotClef + "\',\'" + this.Heure + "\'," + IdJour + ")";
             cmd.ExecuteNonQuery();
 
             con.Close();

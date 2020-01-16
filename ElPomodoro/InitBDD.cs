@@ -17,9 +17,9 @@ namespace ElPomodoro
             con.Open();
             var cmd = new SQLiteCommand(con);
 
-            cmd.CommandText = "CREATE TABLE IF NOT EXISTS jour(idJour INTEGER PRIMARY KEY AUTOINCREMENT, dateJour DATE, intitule VARCHAR(50))";
+            cmd.CommandText = "CREATE TABLE IF NOT EXISTS jour(idJour INTEGER PRIMARY KEY AUTOINCREMENT, dateJour DATETIME, intitule VARCHAR(50), fragment INTEGER)";
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "CREATE TABLE IF NOT EXISTS pomodoro(idPomodoro INTEGER PRIMARY KEY AUTOINCREMENT, motClef VARCHAR(50), idJour INTERGER)";
+            cmd.CommandText = "CREATE TABLE IF NOT EXISTS pomodoro(idPomodoro INTEGER PRIMARY KEY AUTOINCREMENT, motClef VARCHAR(50), heure DATETIME, idJour INTERGER)";
             cmd.ExecuteNonQuery();
             con.Close();
         }
