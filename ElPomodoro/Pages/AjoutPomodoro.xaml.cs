@@ -81,17 +81,16 @@ namespace ElPomodoro.Pages
                 PhraseValidation.Visibility = Visibility.Visible;
             }
             else {
-            PhraseValidation.Visibility = Visibility.Hidden;
-            InitBDD bdd = new InitBDD();
-            var con = bdd.ConnectionBDD();
-            j.Date = laDate.SelectedDate.ToString(); //convertDate
-            j.Intitule = unIntitule.Text;
-            j.Fragment = Int32.Parse(nbFragments.Text);
-            j.Insert();
+                PhraseValidation.Visibility = Visibility.Hidden;
+                InitBDD bdd = new InitBDD();
+                var con = bdd.ConnectionBDD();
+                j.Date = laDate.SelectedDate.ToString(); //convertDate
+                j.Intitule = unIntitule.Text;
+                j.Fragment = Int32.Parse(nbFragments.Text);
+                j.Insert();
 
-            con.Close();
-            RemplissageFragments rf = new RemplissageFragments(j);
-            this.NavigationService.Navigate(rf);
+                RemplissageFragments rf = new RemplissageFragments(j);
+                this.NavigationService.Navigate(rf);
             }
             
         }

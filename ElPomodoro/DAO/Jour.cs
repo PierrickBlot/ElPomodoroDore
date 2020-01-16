@@ -26,7 +26,8 @@ namespace ElPomodoro.DAO
 
             cmd.CommandText = "INSERT INTO jour(dateJour, intitule, fragment) VALUES(\'" + this.Date+ "\',"+this.Intitule+","+Fragment+");";
             cmd.ExecuteNonQuery();
-
+            long oui = con.LastInsertRowId;
+            Id = Convert.ToInt32(oui);
             con.Close();
         }
     }

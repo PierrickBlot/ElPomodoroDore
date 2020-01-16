@@ -60,7 +60,7 @@ namespace ElPomodoro.Pages
                     pause = 1;
                     //minutes = minutes + 30;
                 }
-                listF.Add(new Pomodore() { Numero = i + 1, MotClef = null, Heure = oDate.AddMinutes(minutes).ToString("HH:mm")});
+                listF.Add(new Pomodore() { Numero = i + 1, MotClef = null, Heure = oDate.AddMinutes(minutes).ToString("HH:mm"), IdJour = jour.Id});
                 DataGrid.ItemsSource = listF;
             }
         }
@@ -70,6 +70,18 @@ namespace ElPomodoro.Pages
             foreach (var item in listF)
             {
                 item.Insert();
+            }
+            InitBDD bdd = new InitBDD();
+            var con = bdd.ConnectionBDD();
+            con.Open();
+            var cmd = new SQLiteCommand(con);
+
+            cmd.CommandText = "SELECT * FROM pomodoro WHERE idJour = 2";
+            cmd.ExecuteNonQuery();
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Console.WriteLine("ID_POMODORO : "+reader.GetInt32(0)+" | MOT_CLEF : "+reader.GetString(1)+" | HEURE : "+reader.GetDateTime(2)+ " | ID_JOUR : "+reader.GetInt32(3));
             }
         }
     }
