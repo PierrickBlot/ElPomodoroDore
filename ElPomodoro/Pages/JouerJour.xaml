@@ -7,12 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="JouerJour"
-      Height="550" Width="400" Background="#F7E065">
-
+      Height="550" Width="400" Background="#2D2D30">
     <Grid>
-        <Label x:Name="Titre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Algerian" Foreground="#C56721"/>
-        <TextBlock Text="00:25:00" x:Name="clocktxtblock" FontSize="70" Margin="0,177,0,274" HorizontalAlignment="Center" Width="400" TextAlignment="Center"/>
-        <Button Content="Start" HorizontalAlignment="Left" Margin="157,297,0,0" VerticalAlignment="Top" Width="75" Click="Start_button_click"/>
-        <Button Content="Stop" HorizontalAlignment="Left" Margin="157,322,0,0" VerticalAlignment="Top" Width="75" Click="Stop_button_click"/>
+        <Label x:Name="Titre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Algerian" Foreground="#FFDF66"/>
+        <Border CornerRadius="360" BorderThickness="5" Margin="31,81,31,137" Background="#2D2D30" BorderBrush="#FFDF66"/>
+        <TextBlock x:Name="clocktxtblock" FontSize="60" Margin="0,215,0,251" HorizontalAlignment="Center" Width="400" TextAlignment="Center" Text="00:25:00" Foreground="#FFDF66"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="31,448,0,0" VerticalAlignment="Top" Width="75" Click="Start_button_click" Background="#FFDF66" Foreground="#2D2D30"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="294,448,0,0" VerticalAlignment="Top" Width="75" Click="Stop_button_click" Background="#FFDF66" Foreground="#2D2D30"/>
     </Grid>
 </Page>

@@ -10,16 +10,16 @@
       Height="550" Width="400"
       ShowsNavigationUI="False">
 
-    <Grid Background="#F7E065">
-        <Label Content="NOUVEAU POMODORO" VerticalAlignment="Top" Width="400" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Algerian" Foreground="#C56721"/>
+    <Grid Background="#2D2D30">
+        <Label Content="NOUVEAU POMODORO" VerticalAlignment="Top" Width="400" HorizontalContentAlignment="Center" FontSize="35" Foreground="#FFDF66"/>
         <TextBox x:Name="unIntitule" HorizontalAlignment="Left" Height="23" Margin="112,78,0,0" TextWrapping="Wrap" Text="Intitulé" VerticalAlignment="Top" Width="183" PreviewMouseDown="TextBox_MouseLeftButtonDown" />
         <DatePicker x:Name="laDate" HorizontalAlignment="Left" Margin="112,116,0,0" VerticalAlignment="Top" Width="183"/>
         <TextBlock x:Name="phraseNbFragments" HorizontalAlignment="Left" Margin="287,158,0,0" TextWrapping="Wrap" Text="Limite dépassée" VerticalAlignment="Top" Width="90" Foreground="Red" Visibility="Hidden"/>
-        <TextBlock HorizontalAlignment="Left" Margin="117,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Text="Fragments :"></TextBlock>
-        <TextBlock x:Name="nbFragments" HorizontalAlignment="Left" Margin="187,158,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="112,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Text="Fragments :" Foreground="#FFDF66"></TextBlock>
+        <TextBlock x:Name="nbFragments" HorizontalAlignment="Left" Margin="195,158,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="16" Foreground="#FFDF66"/>
         <Button Content="+" HorizontalAlignment="Left" Margin="217,152,0,0" VerticalAlignment="Top" Width="30" Height="28" Click="Button_Click"/>
         <Button Content="-" HorizontalAlignment="Left" Margin="252,152,0,0" VerticalAlignment="Top" Width="30" Height="28" Click="Button_Click_1"/>
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="162,222,0,0" VerticalAlignment="Top" Width="75" Click="Validation"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="162,222,0,0" VerticalAlignment="Top" Width="75" Click="Validation" Background="#FFDF66" Foreground="#2D2D30"/>
         <TextBlock x:Name="PhraseValidation" Margin="112,185,104,0" TextWrapping="Wrap" Text="Tous les champs sont obligatoires !" VerticalAlignment="Top" Width="185" Foreground="Red" Visibility="Hidden"/>
     </Grid>
 </Page>

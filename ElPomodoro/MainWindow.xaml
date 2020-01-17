@@ -9,7 +9,7 @@
         Title="MainWindow" Height="550" Width="450"
         ResizeMode="NoResize">
     <Page>
-        <Grid Background="#F7E065">
+        <Grid Background="#2D2D30">
             <Frame x:Name="laFrame">
             </Frame>
         </Grid>
