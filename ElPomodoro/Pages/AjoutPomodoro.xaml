@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AjoutPomodoro"
-      Height="450" Width="400"
+      Height="550" Width="400"
       ShowsNavigationUI="False">
 
     <Grid Background="#F7E065">

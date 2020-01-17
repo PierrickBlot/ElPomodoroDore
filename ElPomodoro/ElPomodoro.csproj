@@ -115,6 +115,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\JouerJour.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RemplissageFragments.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -126,6 +130,9 @@
     </Compile>
     <Compile Include="Pages\AjoutPomodoro.xaml.cs">
       <DependentUpon>AjoutPomodoro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\JouerJour.xaml.cs">
+      <DependentUpon>JouerJour.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RemplissageFragments.xaml.cs">
       <DependentUpon>RemplissageFragments.xaml</DependentUpon>

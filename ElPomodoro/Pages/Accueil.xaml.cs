@@ -22,6 +22,8 @@ namespace ElPomodoro.Pages
     /// </summary>
     public partial class Accueil : Page
     {
+        private DependencyProperty dp;
+
         public Accueil()
         {
             InitializeComponent();
@@ -30,20 +32,24 @@ namespace ElPomodoro.Pages
             con.Open();
             var cmd = new SQLiteCommand(con);
 
-            cmd.CommandText = "SELECT * FROM jour";
+            cmd.CommandText = "SELECT * FROM jour"; 
             cmd.ExecuteNonQuery();
             SQLiteDataReader reader = cmd.ExecuteReader();
 
             List<Jour> listJ = new List<Jour>();
-
+            /*Button b = new Button();
+            DataGridTextColumn col = new DataGridTextColumn();
+            col.Header = "Voir";
+            DataGrid.Columns.Add(col);*/
 
             while (reader.Read())
             {
+                //DataGrid.Items.Add();
+                listJ.Add(new Jour() { Id = reader.GetInt32(0), Date = reader.GetString(1), Intitule = reader.GetString(2), Fragment = reader.GetInt32(3) });
+                DataGrid.ItemsSource = listJ;
                 /*var idThis = reader.GetInt32(0);
                 var dateThis = reader.GetString(1);
                 var intituleThis = reader.GetString(1);*/
-                listJ.Add(new Jour() { Id = reader.GetInt32(0), Date = reader.GetString(1), Intitule = reader.GetString(2), Fragment = reader.GetInt32(3) });
-                DataGrid.ItemsSource = listJ;
                 //Jour j = new Jour();
                 //top = top + 10;
                 /*left = left + 10;
@@ -64,6 +70,14 @@ namespace ElPomodoro.Pages
         {
             AjoutPomodoro ap = new AjoutPomodoro();
             this.NavigationService.Navigate(ap);
+        }
+
+        private void DataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = DataGrid.SelectedItem as Jour;
+            Console.WriteLine(selectedItem);
+            JouerJour jj = new JouerJour(selectedItem);
+            this.NavigationService.Navigate(jj);
         }
     }
 }

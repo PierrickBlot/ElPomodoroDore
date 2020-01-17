@@ -12,11 +12,11 @@
 
     <StackPanel Margin="0,0,0,61">
         <Grid Background="#F7E065" Height="450" >
-            <Label Content="El Pomodoro Dore" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Algerian" Foreground="#C56721"/>
+            <Label Content="El Pomodoro Dore" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Algerian" Foreground="#C56721"/>
             <Button Content="Nouveau Pomorodo" HorizontalAlignment="Left" Margin="241,378,0,0" VerticalAlignment="Top" Width="114" Click="NouveauPomodoro" />
-            <DataGrid x:Name="DataGrid"  Background="#F7E065" AutoGenerateColumns="False" Margin="0,113,0,-41" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid x:Name="DataGrid"  Background="#F7E065" AutoGenerateColumns="False" Margin="10,113,10,-41" CanUserAddRows="False" IsReadOnly="True" MouseDoubleClick="DataGrid_MouseDoubleClick">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id"  Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Id"  Binding="{Binding Id}" />
                     <DataGridTextColumn Header="Date" Binding="{Binding Date}" />
                     <DataGridTextColumn Header="Intitule" Binding="{Binding Intitule}" />
                     <DataGridTextColumn Header="Fragments" Binding="{Binding Fragment}" />
@@ -25,7 +25,7 @@
             <Label x:Name="Titre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" HorizontalContentAlignment="Center" FontSize="35" FontFamily="Algerian" Foreground="#C56721"/>
             <TextBlock x:Name="test" HorizontalAlignment="Left" Margin="133,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="117" Foreground="Red" Visibility="Hidden"/>-->
             </DataGrid>
-            <Button Content="Nouveau Pomodoro" HorizontalAlignment="Left" Margin="278,72,0,0" VerticalAlignment="Top" Width="122" Click="NouveauPomodoro" Height="20"/>
+            <Button Content="Nouveau Pomodoro" HorizontalAlignment="Left" Margin="233,74,0,0" VerticalAlignment="Top" Width="122" Click="NouveauPomodoro" Height="20"/>
 
         </Grid>
     </StackPanel>

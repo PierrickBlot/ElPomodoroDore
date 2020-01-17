@@ -71,7 +71,9 @@ namespace ElPomodoro.Pages
             {
                 item.Insert();
             }
-            InitBDD bdd = new InitBDD();
+            Accueil rf = new Accueil();
+            this.NavigationService.Navigate(rf);
+            /*InitBDD bdd = new InitBDD();
             var con = bdd.ConnectionBDD();
             con.Open();
             var cmd = new SQLiteCommand(con);
@@ -82,7 +84,7 @@ namespace ElPomodoro.Pages
             while (reader.Read())
             {
                 Console.WriteLine("ID_POMODORO : "+reader.GetInt32(0)+" | MOT_CLEF : "+reader.GetString(1)+" | HEURE : "+reader.GetDateTime(2)+ " | ID_JOUR : "+reader.GetInt32(3));
-            }
+            }*/
         }
     }
 }
