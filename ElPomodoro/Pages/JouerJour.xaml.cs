@@ -25,11 +25,14 @@ namespace ElPomodoro.Pages
         DispatcherTimer dt = new DispatcherTimer();
         Stopwatch sw = new Stopwatch();
         TimeSpan currentTime;
+        int fragment;
+        bool pause = true;
 
         public JouerJour(DAO.Jour jour)
         {
             InitializeComponent();
-            currentTime = new TimeSpan(0, 25, 0);
+            currentTime = new TimeSpan(0, 0, 4);
+            fragment = jour.Fragment;
             Titre.Content = jour.Intitule;
             dt.Tick += new EventHandler(dt_Tick);
             dt.Interval = new TimeSpan(0, 0, 1);
@@ -37,11 +40,22 @@ namespace ElPomodoro.Pages
 
         void dt_Tick(object sender, EventArgs e)
         {
-            if (sw.IsRunning)
+            if (sw.IsRunning && currentTime != new TimeSpan(0,0,0) && fragment!=0)
             {
                 TimeSpan ts = sw.Elapsed;
                 currentTime = currentTime.Add(TimeSpan.FromSeconds(-1));
                 clocktxtblock.Text = currentTime.ToString();
+            }
+            else if (pause == true)
+            {
+                currentTime = currentTime.Add(TimeSpan.FromSeconds(10));
+                pause = false;
+            }
+            else if (currentTime == new TimeSpan(0, 0, 0) && pause == false)
+            {
+                fragment--;
+                currentTime = currentTime.Add(TimeSpan.FromSeconds(3));
+                pause = true;
             }
         }
 
