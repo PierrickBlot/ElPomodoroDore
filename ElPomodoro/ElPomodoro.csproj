@@ -101,12 +101,21 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAO\Jour.cs" />
+    <Compile Include="DAO\Pomodore.cs" />
     <Compile Include="InitBDD.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Accueil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AjoutPomodoro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\JouerJour.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,8 +125,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Accueil.xaml.cs">
+      <DependentUpon>Accueil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AjoutPomodoro.xaml.cs">
       <DependentUpon>AjoutPomodoro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\JouerJour.xaml.cs">
+      <DependentUpon>JouerJour.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RemplissageFragments.xaml.cs">
       <DependentUpon>RemplissageFragments.xaml</DependentUpon>
@@ -139,6 +154,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Fonts\stormfaze.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

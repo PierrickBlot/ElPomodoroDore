@@ -1,6 +1,8 @@
-﻿using ElPomodoro.Pages;
+﻿using ElPomodoro.DAO;
+using ElPomodoro.Pages;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +26,8 @@ namespace ElPomodoro
         public MainWindow() 
         {
             InitializeComponent();
-            InitBDD bdd = new InitBDD();
-        }
-
-        private void NouveauPomodoro(object sender, RoutedEventArgs e)
-        {
-            AjoutPomodoro ap = new AjoutPomodoro();
-            this.Content = ap;
+            Accueil ap = new Accueil();
+            laFrame.NavigationService.Navigate(ap);
         }
     }
 }

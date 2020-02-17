@@ -68,17 +68,31 @@ namespace ElPomodoro.Pages
 
         private void Validation(object sender, RoutedEventArgs e)
         {
-            InitBDD bdd = new InitBDD();
-            var con = bdd.ConnectionBDD();
+           
 
             Jour j = new Jour();
-            j.date = laDate.SelectedDate;
-            j.intitule = unIntitule.Text;
+            //DateTime UpdatedTime = laDate.SelectedDate ?? j.date;
+            //this.date = DateTime.Parse(this.date.ToString("YYYY/MM/DD"));
+            //var uneDate = laDate.SelectedDate.ToString();
+            //DateTime convertDate = Convert.ToDateTime(uneDate);
 
-            j.Insert();
+            if (unIntitule.Text == "" || laDate.Text == "" || nbFragments.Text == "0" || unIntitule.Text == "Intitulé")
+            {
+                PhraseValidation.Visibility = Visibility.Visible;
+            }
+            else {
+                PhraseValidation.Visibility = Visibility.Hidden;
+                InitBDD bdd = new InitBDD();
+                var con = bdd.ConnectionBDD();
+                j.Date = laDate.SelectedDate.ToString(); //convertDate
+                j.Intitule = unIntitule.Text;
+                j.Fragment = Int32.Parse(nbFragments.Text);
+                j.Insert();
 
-            RemplissageFragments rf = new RemplissageFragments();
-            this.Content = rf;
+                RemplissageFragments rf = new RemplissageFragments(j);
+                this.NavigationService.Navigate(rf);
+            }
+            
         }
     }
 }
