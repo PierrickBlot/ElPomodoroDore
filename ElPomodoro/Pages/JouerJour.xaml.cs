@@ -31,7 +31,7 @@ namespace ElPomodoro.Pages
         public JouerJour(DAO.Jour jour)
         {
             InitializeComponent();
-            currentTime = new TimeSpan(0, 0, 4);
+            currentTime = new TimeSpan(0, 25, 0);
             fragment = jour.Fragment;
             Titre.Content = jour.Intitule;
             dt.Tick += new EventHandler(dt_Tick);
@@ -48,13 +48,13 @@ namespace ElPomodoro.Pages
             }
             else if (pause == true)
             {
-                currentTime = currentTime.Add(TimeSpan.FromSeconds(10));
+                currentTime = currentTime.Add(TimeSpan.FromMinutes(5));
                 pause = false;
             }
             else if (currentTime == new TimeSpan(0, 0, 0) && pause == false)
             {
                 fragment--;
-                currentTime = currentTime.Add(TimeSpan.FromSeconds(3));
+                currentTime = currentTime.Add(TimeSpan.FromMinutes(25));
                 pause = true;
             }
         }
